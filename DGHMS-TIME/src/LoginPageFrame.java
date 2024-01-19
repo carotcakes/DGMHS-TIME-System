@@ -56,10 +56,12 @@ public class LoginPageFrame {
 		frame.getContentPane().setLayout(null);
 		
 		JTextArea EmpIDBox = new JTextArea();
+		EmpIDBox.setFont(new Font("Monospaced", Font.PLAIN, 18));
 		EmpIDBox.setBounds(210, 204, 355, 35);
 		frame.getContentPane().add(EmpIDBox);
 		
 		JTextArea PassWrdBox = new JTextArea();
+		PassWrdBox.setFont(new Font("Monospaced", Font.PLAIN, 18));
 		PassWrdBox.setBounds(210, 300, 355, 35);
 		frame.getContentPane().add(PassWrdBox);
 		

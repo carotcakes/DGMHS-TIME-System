@@ -46,43 +46,48 @@ public class DashBdEMPFrame {
 		frame.setBounds(100, 100, 775, 530);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel.setBackground(new Color(135, 206, 235));
 		panel.setBounds(0, 0, 761, 95);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("Bonjour! *Employee Name");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 28));
-		lblNewLabel.setBounds(24, 34, 665, 32);
+
+		JLabel lblNewLabel = new JLabel("Welcome!");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblNewLabel.setBounds(24, 34, 145, 32);
 		panel.add(lblNewLabel);
-		
+
+		JLabel EMPNameLbl = new JLabel("Name");
+		EMPNameLbl.setFont(new Font("Tahoma", Font.BOLD, 30));
+		EMPNameLbl.setBounds(168, 34, 320, 32);
+		panel.add(EMPNameLbl);
+
 		JButton EMPClockInbtn = new JButton("Clock In");
 		EMPClockInbtn.setFont(new Font("Tahoma", Font.PLAIN, 21));
-		EMPClockInbtn.setBackground(new Color(135, 206, 250));
+		EMPClockInbtn.setBackground(new Color(0, 102, 204));
 		EMPClockInbtn.setBounds(75, 145, 185, 65);
 		frame.getContentPane().add(EMPClockInbtn);
-		
+
 		JButton EMPClockOutbtn = new JButton("Clock Out");
-		EMPClockOutbtn.setBackground(new Color(135, 206, 250));
+		EMPClockOutbtn.setBackground(new Color(0, 153, 204));
 		EMPClockOutbtn.setFont(new Font("Tahoma", Font.PLAIN, 21));
 		EMPClockOutbtn.setEnabled(false);
 		EMPClockOutbtn.setBounds(501, 145, 185, 65);
 		frame.getContentPane().add(EMPClockOutbtn);
-		
-		JButton EMPChUserPWbtn = new JButton("Change Password");
-		EMPChUserPWbtn.setBackground(new Color(135, 206, 250));
-		EMPChUserPWbtn.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		EMPChUserPWbtn.setBounds(288, 292, 185, 65);
-		frame.getContentPane().add(EMPChUserPWbtn);
-		
-		JButton btnNewButton = new JButton("Logout");
-		btnNewButton.setBackground(new Color(205, 92, 92));
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 21));
-		btnNewButton.setForeground(new Color(0, 0, 0));
-		btnNewButton.setBounds(288, 400, 185, 65);
-		frame.getContentPane().add(btnNewButton);
+
+		JButton ChgPassWbtn = new JButton("Change Password");
+		ChgPassWbtn.setBackground(new Color(0, 153, 204));
+		ChgPassWbtn.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		ChgPassWbtn.setBounds(288, 292, 185, 65);
+		frame.getContentPane().add(ChgPassWbtn);
+
+		JButton LogoutEMPbtn = new JButton("Logout");
+		LogoutEMPbtn.setBackground(new Color(205, 92, 92));
+		LogoutEMPbtn.setFont(new Font("Tahoma", Font.PLAIN, 21));
+		LogoutEMPbtn.setForeground(new Color(0, 0, 0));
+		LogoutEMPbtn.setBounds(288, 400, 185, 65);
+		frame.getContentPane().add(LogoutEMPbtn);
 	}
 }
