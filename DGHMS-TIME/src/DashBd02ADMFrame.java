@@ -64,10 +64,9 @@ public class DashBd02ADMFrame {
 		EMPNameLbl.setBounds(168, 34, 320, 32);
 		panel.add(EMPNameLbl);
 
-		JButton GenAttReportbtn = new JButton("Generate Attendance Report");
-		GenAttReportbtn.setHorizontalAlignment(SwingConstants.LEADING);
+		JButton GenAttReportbtn = new JButton("Change Password");
 		GenAttReportbtn.setBackground(new Color(143, 188, 143));
-		GenAttReportbtn.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		GenAttReportbtn.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		GenAttReportbtn.setBounds(75, 209, 185, 65);
 		frame.getContentPane().add(GenAttReportbtn);
 
@@ -82,8 +81,8 @@ public class DashBd02ADMFrame {
 		LogoutADMbtn.setBounds(288, 400, 185, 65);
 		frame.getContentPane().add(LogoutADMbtn);
 		
-		JButton ManUserAccsbtn = new JButton("Manage User Accounts");
-		ManUserAccsbtn.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		JButton ManUserAccsbtn = new JButton("Feature 5");
+		ManUserAccsbtn.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		ManUserAccsbtn.setBackground(new Color(143, 188, 143));
 		ManUserAccsbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -92,11 +91,11 @@ public class DashBd02ADMFrame {
 		ManUserAccsbtn.setBounds(500, 209, 185, 65);
 		frame.getContentPane().add(ManUserAccsbtn);
 		
-		JButton backToLogin = new JButton("←");
-		backToLogin.setBackground(new Color(204, 204, 51));
-		backToLogin.setFont(new Font("MS PGothic", Font.BOLD, 26));
-		backToLogin.setBounds(75, 413, 85, 35);
-		frame.getContentPane().add(backToLogin);
+		JButton backToPageOne = new JButton("←");
+		backToPageOne.setBackground(new Color(204, 204, 51));
+		backToPageOne.setFont(new Font("MS PGothic", Font.BOLD, 26));
+		backToPageOne.setBounds(75, 413, 85, 35);
+		frame.getContentPane().add(backToPageOne);
 	}
 
 }

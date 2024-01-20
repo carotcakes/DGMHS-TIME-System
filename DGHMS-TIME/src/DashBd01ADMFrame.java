@@ -5,6 +5,7 @@ import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 import javax.swing.SwingConstants;
@@ -65,6 +66,12 @@ public class DashBd01ADMFrame {
 		panel.add(EMPNameLbl);
 
 		JButton ADMClockInbtn = new JButton("Clock In");
+		ADMClockInbtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(frame, "Congratulations! You have Clocked In for today.",
+			               "Clock In/Out", JOptionPane.DEFAULT_OPTION);
+			}
+		});
 		ADMClockInbtn.setFont(new Font("Tahoma", Font.PLAIN, 21));
 		ADMClockInbtn.setBackground(new Color(46, 139, 87));
 		ADMClockInbtn.setBounds(75, 145, 185, 65);
@@ -104,6 +111,12 @@ public class DashBd01ADMFrame {
 		});
 		ManUserAccsbtn.setBounds(501, 286, 185, 65);
 		frame.getContentPane().add(ManUserAccsbtn);
+		
+		JButton goToPageTwo = new JButton("→");
+		goToPageTwo.setBackground(new Color(204, 204, 51));
+		goToPageTwo.setFont(new Font("MS PGothic", Font.BOLD, 26));
+		goToPageTwo.setBounds(601, 413, 85, 35);
+		frame.getContentPane().add(goToPageTwo);
 	}
 
 }
