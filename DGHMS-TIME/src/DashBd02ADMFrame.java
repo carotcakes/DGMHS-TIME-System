@@ -56,7 +56,7 @@ public class DashBd02ADMFrame {
 
 		JLabel lblNewLabel = new JLabel("Welcome!");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblNewLabel.setBounds(24, 34, 145, 32);
+		lblNewLabel.setBounds(24, 34, 145, 35);
 		panel.add(lblNewLabel);
 
 		JLabel EMPNameLbl = new JLabel("Name");

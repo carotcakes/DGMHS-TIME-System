@@ -57,7 +57,7 @@ public class ForgotPassWFrame {
 		
 		JLabel lblNewLabel = new JLabel("Forgot Password");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblNewLabel.setBounds(24, 34, 239, 32);
+		lblNewLabel.setBounds(24, 34, 239, 35);
 		panel.add(lblNewLabel);
 		
 		JTextArea ForgotEmpID = new JTextArea();
