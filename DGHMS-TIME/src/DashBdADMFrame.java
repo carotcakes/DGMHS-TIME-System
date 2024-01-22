@@ -12,9 +12,9 @@ import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class DashBd01ADMFrame {
+public class DashBdADMFrame {
 
-	private JFrame frame;
+	 JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -23,7 +23,7 @@ public class DashBd01ADMFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					DashBd01ADMFrame window = new DashBd01ADMFrame();
+					DashBdADMFrame window = new DashBdADMFrame();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,7 +35,7 @@ public class DashBd01ADMFrame {
 	/**
 	 * Create the application.
 	 */
-	public DashBd01ADMFrame() {
+	public DashBdADMFrame() {
 		initialize();
 	}
 
@@ -65,22 +65,34 @@ public class DashBd01ADMFrame {
 		EMPNameLbl.setBounds(168, 34, 320, 32);
 		panel.add(EMPNameLbl);
 
+		JButton ADMClockOutbtn = new JButton("Clock Out");
+		ADMClockOutbtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(frame, "Good Bye! You have Clocked Out for today. All Clock In/Out buttons disabled",
+			               "Clock In/Out", JOptionPane.DEFAULT_OPTION);
+				
+				ADMClockOutbtn.setEnabled(false);
+			}
+		});
+		
 		JButton ADMClockInbtn = new JButton("Clock In");
 		ADMClockInbtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) {			
 				JOptionPane.showMessageDialog(frame, "Congratulations! You have Clocked In for today.",
 			               "Clock In/Out", JOptionPane.DEFAULT_OPTION);
+				
+				ADMClockInbtn.setEnabled(false);
+				ADMClockOutbtn.setEnabled(true);
 			}
 		});
 		ADMClockInbtn.setFont(new Font("Tahoma", Font.PLAIN, 21));
 		ADMClockInbtn.setBackground(new Color(46, 139, 87));
 		ADMClockInbtn.setBounds(75, 145, 185, 65);
 		frame.getContentPane().add(ADMClockInbtn);
-
-		JButton ADMClockOutbtn = new JButton("Clock Out");
-		ADMClockOutbtn.setBackground(new Color(143, 188, 143));
-		ADMClockOutbtn.setFont(new Font("Tahoma", Font.PLAIN, 21));
+		
 		ADMClockOutbtn.setEnabled(false);
+		ADMClockOutbtn.setBackground(new Color(46, 139, 87));
+		ADMClockOutbtn.setFont(new Font("Tahoma", Font.PLAIN, 21));
 		ADMClockOutbtn.setBounds(501, 145, 185, 65);
 		frame.getContentPane().add(ADMClockOutbtn);
 
@@ -94,6 +106,10 @@ public class DashBd01ADMFrame {
 		JButton LogoutADMbtn = new JButton("Logout");
 		LogoutADMbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				LoginPageFrame LgnPg = new	LoginPageFrame();
+				
+				LgnPg.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		LogoutADMbtn.setBackground(new Color(205, 92, 92));
@@ -107,16 +123,14 @@ public class DashBd01ADMFrame {
 		ManUserAccsbtn.setBackground(new Color(143, 188, 143));
 		ManUserAccsbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				ManageUserAccsFrame MNG = new	ManageUserAccsFrame();
+				
+				MNG.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		ManUserAccsbtn.setBounds(501, 286, 185, 65);
 		frame.getContentPane().add(ManUserAccsbtn);
-		
-		JButton goToPageTwo = new JButton("→");
-		goToPageTwo.setBackground(new Color(204, 204, 51));
-		goToPageTwo.setFont(new Font("MS PGothic", Font.BOLD, 26));
-		goToPageTwo.setBounds(601, 413, 85, 35);
-		frame.getContentPane().add(goToPageTwo);
 	}
 
 }

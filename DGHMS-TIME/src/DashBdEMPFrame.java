@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Color;
 import javax.swing.border.LineBorder;
 import java.awt.Font;
@@ -13,7 +15,7 @@ import java.awt.event.ActionEvent;
 
 public class DashBdEMPFrame {
 
-	private JFrame frame;
+	 JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -64,18 +66,35 @@ public class DashBdEMPFrame {
 		EMPNameLbl.setBounds(168, 34, 320, 32);
 		panel.add(EMPNameLbl);
 
-		JButton EMPClockInbtn = new JButton("Clock In");
-		EMPClockInbtn.setFont(new Font("Tahoma", Font.PLAIN, 21));
-		EMPClockInbtn.setBackground(new Color(0, 102, 204));
-		EMPClockInbtn.setBounds(75, 145, 185, 65);
-		frame.getContentPane().add(EMPClockInbtn);
-
 		JButton EMPClockOutbtn = new JButton("Clock Out");
-		EMPClockOutbtn.setBackground(new Color(0, 153, 204));
+		EMPClockOutbtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(frame, "Good Bye! You have Clocked Out for today. All Clock In/Out buttons disabled",
+			               "Clock In/Out", JOptionPane.DEFAULT_OPTION);
+				
+				EMPClockOutbtn.setEnabled(false);
+			}
+		});
+		EMPClockOutbtn.setBackground(new Color(70, 130, 180));
 		EMPClockOutbtn.setFont(new Font("Tahoma", Font.PLAIN, 21));
 		EMPClockOutbtn.setEnabled(false);
 		EMPClockOutbtn.setBounds(501, 145, 185, 65);
 		frame.getContentPane().add(EMPClockOutbtn);
+		
+		JButton EMPClockInbtn = new JButton("Clock In");
+		EMPClockInbtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(frame, "Congratulations! You have Clocked In for today.",
+			               "Clock In/Out", JOptionPane.DEFAULT_OPTION);
+				
+				EMPClockInbtn.setEnabled(false);
+				EMPClockOutbtn.setEnabled(true);
+			}
+		});
+		EMPClockInbtn.setFont(new Font("Tahoma", Font.PLAIN, 21));
+		EMPClockInbtn.setBackground(new Color(70, 130, 180));
+		EMPClockInbtn.setBounds(75, 145, 185, 65);
+		frame.getContentPane().add(EMPClockInbtn);
 
 		JButton ChgPassWbtn = new JButton("Change Password");
 		ChgPassWbtn.setBackground(new Color(0, 153, 204));
@@ -84,6 +103,14 @@ public class DashBdEMPFrame {
 		frame.getContentPane().add(ChgPassWbtn);
 
 		JButton LogoutEMPbtn = new JButton("Logout");
+		LogoutEMPbtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LoginPageFrame LgnPg = new	LoginPageFrame();
+				
+				LgnPg.frame.setVisible(true);
+				frame.dispose();
+			}
+		});
 		LogoutEMPbtn.setBackground(new Color(205, 92, 92));
 		LogoutEMPbtn.setFont(new Font("Tahoma", Font.PLAIN, 21));
 		LogoutEMPbtn.setForeground(new Color(0, 0, 0));

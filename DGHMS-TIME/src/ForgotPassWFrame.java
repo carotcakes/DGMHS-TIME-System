@@ -9,11 +9,12 @@ import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ForgotPassWFrame {
 
-	private JFrame frame;
-	private JTextField ForgotEmail;
+	 JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -57,7 +58,7 @@ public class ForgotPassWFrame {
 		
 		JLabel lblNewLabel = new JLabel("Forgot Password");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblNewLabel.setBounds(24, 34, 239, 32);
+		lblNewLabel.setBounds(24, 34, 239, 37);
 		panel.add(lblNewLabel);
 		
 		JTextArea ForgotEmpID = new JTextArea();
@@ -66,6 +67,14 @@ public class ForgotPassWFrame {
 		frame.getContentPane().add(ForgotEmpID);
 		
 		JButton backToLogin = new JButton("←");
+		backToLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LoginPageFrame LgnPg = new	LoginPageFrame();
+				
+				LgnPg.frame.setVisible(true);
+				frame.dispose();
+			}
+		});
 		backToLogin.setBackground(new Color(205, 92, 92));
 		backToLogin.setFont(new Font("MS PGothic", Font.BOLD, 26));
 		backToLogin.setBounds(40, 125, 85, 35);
