@@ -146,12 +146,5 @@ public class AddUser {
 		btnAddUsr.setBounds(585, 315, 102, 35);
 		frame.getContentPane().add(btnAddUsr);
 		
-		JButton btnBack = new JButton("Back");
-		btnBack.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnBack.setBackground(new Color(154, 205, 50));
-		btnBack.setBounds(75, 110, 102, 35);
-		frame.getContentPane().add(btnBack);
-
-		
 	}
 }
